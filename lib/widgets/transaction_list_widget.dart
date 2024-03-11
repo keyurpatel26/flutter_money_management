@@ -94,6 +94,7 @@ class _TransactionListWidgetState extends State<TransactionListWidget> {
       ),
     );
 
+//its for limited data get.
     // Query query = FirebaseFirestore.instance
     //     .collection('users')
     //     .doc(FirebaseAuth.instance.currentUser!.uid)

@@ -359,26 +359,6 @@ class _ChartState extends State<Chart> {
   Widget build(BuildContext context) {
     return SfCircularChart(
       tooltipBehavior: _tooltip, centerY: '50%',
-      //   CircularChartAnnotation(
-      //     widget: PhysicalModel(
-      //       child: Container(),
-      //       shape: BoxShape.circle,
-      //       elevation: 10,
-      //       shadowColor: Colors.black,
-      //       color: const Color.fromRGBO(230, 230, 230, 1),
-      //     ),
-      //   ),
-      //   const CircularChartAnnotation(
-      //     widget: Text(
-      //       '0%',
-      //       style: TextStyle(
-      //         color: Color.fromRGBO(0, 0, 0, 0.5),
-      //         fontSize: 25,
-      //       ),
-      //     ),
-      //   ),
-      // ],
-
       series: <CircularSeries<_ChartData, String>>[
         DoughnutSeries<_ChartData, String>(
           emptyPointSettings: const EmptyPointSettings(color: Colors.grey, mode: EmptyPointMode.zero),
@@ -394,13 +374,6 @@ class _ChartState extends State<Chart> {
         Colors.red,
       ],
       legend: const Legend(isVisible: true),
-      // title: ChartTitle(
-      //   text: "Total Amount \n $total",
-      //   textStyle: const TextStyle(
-      //     fontWeight: FontWeight.w700,
-      //     overflow: TextOverflow.ellipsis,
-      //   ),
-      // ),
     );
   }
 }

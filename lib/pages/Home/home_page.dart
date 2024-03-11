@@ -20,9 +20,6 @@ class _HomePageState extends State<HomePage> {
   Map<String, dynamic> delethistory = {};
   String type = "";
 
-  // late final String userid;
-  //final Stream<DocumentSnapshot> _userStream = FirebaseFirestore.instance.collection("users").doc().snapshots();
-
   @override
   void initState() {
     super.initState();
@@ -83,32 +80,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
  
-  // Future updatedData(
-  //   String id,
-  // ) async {
-  //   try {
-  //     await FirebaseFirestore.instance.collection("users").doc(FirebaseAuth.instance.currentUser!.uid).collection("userdata").doc(id).get().then((value) {
-  //       delethistory = value.data()!;
-  //     });
-  //     setState(() {
-  //       if (delethistory['type'] == "expense") {
-  //         totalexpup = delethistory['amount'];
-  //         totalup = total - totalexpup;
-  //       } else {
-  //         totalinup = delethistory['amount'];
-  //         totalup = total - totalinup;
-  //       }
-  //     });
-  //     await FirebaseFirestore.instance.collection("users").doc(FirebaseAuth.instance.currentUser!.uid).update({
-  //       "totaleamount": totalup,
-  //       "totalexpense": totalexpup,
-  //       "totalincome": totalinup,
-  //     });
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     getUserdata();

@@ -6,13 +6,8 @@ class Utils {
   }
 }
 
-
 List history = [];
 String username = "";
 String profilepic = "";
 double income = 0, expense = 0, total = income - expense;
 
-
-// double totalincome = 0;
-// double totalexpense = 0;
-// double totaleamount = totalincome - totalexpense;

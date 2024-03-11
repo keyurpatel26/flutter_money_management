@@ -23,19 +23,7 @@ class _BottomState extends State<Bottom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Screen[index_color],
-      // floatingActionButton: FloatingActionButton(
-      //   shape: RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.circular(50),
-      //   ),
-      //   onPressed: () {
-      //     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Add_Screen()));
-      //   },
-      //   backgroundColor: appcolor,
-      //   child: const Icon(Icons.add,color: Colors.white,),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      
+      body: Screen[index_color],  
       bottomNavigationBar:NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -60,70 +48,7 @@ class _BottomState extends State<Bottom> {
             label: 'Profile',
           ),
         ],
-      ), 
-      
-      // BottomAppBar(
-      //   shape: const CircularNotchedRectangle(),
-      //   child: Padding(
-      //     padding: const EdgeInsets.only(top: 7.5, bottom: 7.5),
-      //     child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //       children: [
-      //         GestureDetector(
-      //           onTap: () {
-      //             setState(() {
-      //               index_color = 0;
-      //             });
-      //           },
-      //           child: Icon(
-      //             Icons.home,
-      //             size: 35,
-      //             color: index_color == 0 ?  appcolor : Colors.grey,
-      //           ),
-      //         ),
-
-      //         GestureDetector(
-      //           onTap: () {
-      //             setState(() {
-      //               index_color = 1;
-      //             });
-      //           },
-      //           child: Icon(
-      //             Icons.event_note_sharp,
-      //             size: 30,
-      //             color: index_color == 1 ? appcolor : Colors.grey,
-      //           ),
-      //         ),
-      //         // const SizedBox(width: 10),
-      //         // GestureDetector(
-      //         //   onTap: () {
-      //         //     setState(() {
-      //         //       index_color = 2;
-      //         //     });
-      //         //   },
-      //         //   child: Icon(
-      //         //     Icons.account_balance_wallet_outlined,
-      //         //     size: 30,
-      //         //     color: index_color == 2 ? appcolor : Colors.grey,
-      //         //   ),
-      //         // ),
-              
-      //         GestureDetector(
-      //           onTap: () {
-      //             setState(() {
-      //               index_color = 3;
-      //             });
-      //           },
-      //           child: Icon(
-      //             Icons.account_circle,
-      //             size: 35,
-      //             color: index_color == 3 ? appcolor : Colors.grey,
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      ),       
     );
   }
 }
