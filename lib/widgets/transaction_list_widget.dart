@@ -53,46 +53,48 @@ class _TransactionListWidgetState extends State<TransactionListWidget> {
     var height = screenSize.height;
     var width = screenSize.width;
 
-    return SingleChildScrollView(
-      child: ListView.builder(
-        reverse: true,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: monthHistory.length,
-        itemBuilder: (context, index) {
-          var data = monthHistory[index];
-          var type = data['type'];
-          String des = data['description'];
-          var docid = data['id'];
-          var amount = data['amount'];
-          return Slidable(
-            enabled: true,
-            key: const ValueKey(0),
-            endActionPane: ActionPane(
-              motion: const ScrollMotion(),
-              // dismissible: DismissiblePane(onDismissed: () {}),
-              children: [
-                SlidableAction(
-                  onPressed: (context) {
-                    doing(context, docid, amount, type);
-                  },
-                  backgroundColor: const Color(0xFFFE4A49),
-                  foregroundColor: Colors.white,
-                  icon: Icons.delete,
-                  label: 'Delete',
-                ),
-              ],
-            ),
-            child: listview(
-              type,
-              data,
-              width,
-              des,
+    return monthHistory.isEmpty
+        ? const Center(child: Text("No Data Available"))
+        : SingleChildScrollView(
+            child: ListView.builder(
+              reverse: true,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: monthHistory.length,
+              itemBuilder: (context, index) {
+                var data = monthHistory[index];
+                var type = data['type'];
+                String des = data['description'];
+                var docid = data['id'];
+                var amount = data['amount'];
+                return Slidable(
+                  enabled: true,
+                  key: const ValueKey(0),
+                  endActionPane: ActionPane(
+                    motion: const ScrollMotion(),
+                    // dismissible: DismissiblePane(onDismissed: () {}),
+                    children: [
+                      SlidableAction(
+                        onPressed: (context) {
+                          doing(context, docid, amount, type);
+                        },
+                        backgroundColor: const Color(0xFFFE4A49),
+                        foregroundColor: Colors.white,
+                        icon: Icons.delete,
+                        label: 'Delete',
+                      ),
+                    ],
+                  ),
+                  child: listview(
+                    type,
+                    data,
+                    width,
+                    des,
+                  ),
+                );
+              },
             ),
           );
-        },
-      ),
-    );
 
 //its for limited data get.
     // Query query = FirebaseFirestore.instance
